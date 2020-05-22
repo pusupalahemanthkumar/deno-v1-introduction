@@ -95,7 +95,7 @@ const updateProduct = async({ params, request, response }: { params: { id: strin
         response.status = 404
         response.body = {
             success: false,
-            msg: 'No product found'
+            msg: 'No product found' 
         }
     }
 }
