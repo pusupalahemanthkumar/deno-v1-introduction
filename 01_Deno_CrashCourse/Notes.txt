@@ -1,0 +1,20 @@
+/*   DENO Documentation Example:  */
+
+// Example 1
+E:\Deno\01_Deno_CrashCourse>curl https://deno.land/std/examples/welcome.ts    
+console.log("Welcome to Deno �🦕");
+
+E:\Deno\01_Deno_CrashCourse>deno run https://deno.land/std/examples/welcome.ts
+Welcome to Deno �🦕
+
+E:\Deno\01_Deno_CrashCourse>
+
+// Example 2
+E:\Deno\01_Deno_CrashCourse>deno run --allow-read --allow-net https://deno.land/std/http/file_server.ts
+HTTP server listening on http://0.0.0.0:4507/
+[2020-05-20 16:03:34] "GET / HTTP/1.1" 200
+The system cannot find the file specified. (os error 2)
+[2020-05-20 16:03:34] "GET /favicon.ico HTTP/1.1" 404
+
+
+
