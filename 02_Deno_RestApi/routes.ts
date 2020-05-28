@@ -1,3 +1,4 @@
+// Importing Required Files And Packages Here.
 import { Router } from "https://deno.land/x/oak/mod.ts";
 
 import {
@@ -11,6 +12,7 @@ import {
 
 const router =new Router();
 
+// Setting Up Routes Here. 
 router.get("/api/v1/products", getProducts)
     .get("/api/v1/products/:id", getProduct)
     .post("/api/v1/products", addProduct)

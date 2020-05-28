@@ -1,6 +1,9 @@
+// Importing Required Files And Packages Here.
 import { v4 } from 'https://deno.land/std/uuid/mod.ts'
 import { Product } from '../types.ts'
 
+
+//  Data For Our Rest Api
 let products: Product[] = [
     {
       id: "1",
@@ -21,6 +24,9 @@ let products: Product[] = [
       price: 59.99,
     },
   ];
+
+
+/*      Main Logic Here   */
 
 // @desc    Get all products
 // @route   GET /api/v1/products
