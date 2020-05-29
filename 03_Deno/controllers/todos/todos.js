@@ -1,5 +1,8 @@
+// Importing Required Files And Packages Here.
 import { FILE_PATH } from "../../config.js";
 
+
+// Main Logic Here.
 export const getTodos = async ({ response }) => {
   const decoder = new TextDecoder();
   try {
