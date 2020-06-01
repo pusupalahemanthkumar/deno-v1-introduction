@@ -8,7 +8,7 @@ const client = new MongoClient();
 
 // Connecting 
 client.connectWithUri(
-  "PLACE YOUR MONGODB URI HERE",
+  "Place Your MongoDb URI Here.",
 );
 
 // Database
