@@ -74,31 +74,10 @@ export const updateUser = async (ctx: any) => {
       msg: "Please Provide The Required Data",
     };
     return;
-  }
-  // Getting Request Body Here.
+  }  
+  // Getting Request Body Here. 
   const data = await ctx.request.body();
-   // Vadliation check Here.
-  if (!data.value.email) {
-    ctx.response.status = 400;
-    ctx.response.body = {
-      msg: "Email is Required",
-    };
-    return;
-  }
-  if (!data.value.password) {
-    ctx.response.status = 400;
-    ctx.response.body = {
-      msg: "Password is Required",
-    };
-    return;
-  }
-  if (!data.value.name) {
-    ctx.response.status = 400;
-    ctx.response.body = {
-      msg: "Name is Required",
-    };
-    return;
-  }
+  
   // Updating User Data Here.
   const { matchedCount, modifiedCount, upsertedId } = await User.updateOne(
     { _id: { $oid: ctx.params.id } },
@@ -117,7 +96,7 @@ export const updateUser = async (ctx: any) => {
 
 export const deleteUser = async (ctx: any) => {
   const deleteCount = await User.deleteOne({ _id: { $oid: ctx.params.id } });
-  ctx.response.status = 201;
+  ctx.response.status = 200;
   ctx.response.body = {
     msg: "Deleted User Successfully.",
   };
