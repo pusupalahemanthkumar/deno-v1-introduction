@@ -6,3 +6,4 @@
 -  **`Improved Validation `** 
 -  **`Hot Reload Feature `** 
 -  **`Error Handling`** 
+-  **`Authentication with jwt`**
