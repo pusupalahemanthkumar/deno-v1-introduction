@@ -2,9 +2,11 @@
 
 // Importing Required Files And Packages Here.
 import { Application } from "https://deno.land/x/oak/mod.ts";
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import { config } from "https://deno.land/x/dotenv/mod.ts";
 
 import router from "./routes/routes.ts";
+import protectedRouter from "./routes/protected.ts";
 import pageNotFound from "./404.ts";
 
 const env = config();
@@ -18,7 +20,9 @@ const PORT = +env.APP_PORT || 4000;
 const app = new Application();
 
 // MiddleWares Here.
+app.use(oakCors());
 app.use(router.routes());
+app.use(protectedRouter.routes())
 app.use(router.allowedMethods());
 
 // Not Found Route Handling Here.

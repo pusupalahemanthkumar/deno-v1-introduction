@@ -5,3 +5,5 @@
 -  **`CRUD OPERATIONS With MONGODB`** 
 -  **`Improved Validation `** 
 -  **`Hot Reload Feature `** 
+-  **`Password hashing with Bcrypt`**
+-  **`Authentication with jsonwebtokens`**
