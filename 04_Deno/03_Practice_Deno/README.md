@@ -6,4 +6,5 @@
 -  **`Improved Validation `** 
 -  **`Hot Reload Feature `** 
 -  **`Error Handling`** 
+-  **`Bcrypt For Password Hashing`**
 -  **`Authentication with jwt`**

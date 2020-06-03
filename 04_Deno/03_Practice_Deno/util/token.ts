@@ -1,4 +1,5 @@
- import {
+// Importing Required Files And Packages Here.
+import {
   validateJwt,
   parseAndDecode,
   validateJwtObject,
@@ -18,6 +19,7 @@ const header: Jose = {
 };
 
 export default {
+  // Logic To Generate Token
   generate(userId: string): string {
     const payload: Payload = {
       uid: userId,
@@ -25,9 +27,11 @@ export default {
     };
     return makeJwt({ header, payload, key });
   },
+  // Logic To Validate Token 
   async validate(token: string) {
     return !!await validateJwt(token, key, { isThrowing: false });
   },
+  // Getting UserId For Token
   fetchUserId(token: string) {
     return validateJwtObject(parseAndDecode(token)).payload;
   },
