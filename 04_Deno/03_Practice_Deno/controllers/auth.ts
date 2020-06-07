@@ -1,6 +1,6 @@
 // Importing Required Files And Packages Here.
 import db from "../config/database.ts";
-import { ObjectId } from "https://deno.land/x/mongo@v0.7.0/mod.ts";
+import { ObjectId } from "https://deno.land/x/mongo@v0.8.0/mod.ts";
 
 import validation from "../validation.ts";
 import hash from "../util/hash.ts";

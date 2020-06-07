@@ -1,5 +1,5 @@
 // Importing Required Files And Packages Here.
-import { MongoClient } from "https://deno.land/x/mongo@v0.7.0/mod.ts";
+import { MongoClient } from "https://deno.land/x/mongo@v0.8.0/mod.ts";
 
 // Setting up MONGODB Connection Here.
 
@@ -8,7 +8,7 @@ const client = new MongoClient();
 
 // Connecting 
 client.connectWithUri(
-  "Place Your MongoDb URI Here."
+  "mongodb+srv://$hemanth:$hemanth@cluster0-xuuie.mongodb.net/"
 );
 
 // Database
