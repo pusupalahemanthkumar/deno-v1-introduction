@@ -1,18 +1,21 @@
 // Importing Required Files And Packages Here.
-import { MongoClient } from "https://deno.land/x/mongo@v0.7.0/mod.ts";
+import { MongoClient } from "https://deno.land/x/mongo@v0.8.0/mod.ts";
+import { config } from "https://deno.land/x/dotenv/mod.ts";
 
-// Setting up MONGODB Connection Here.
+const env = config();
 
-// Initializig MongoDb Driver Here
+// Defining Global Constants Here.
+const Username = env.MONGODB_USERNAME;
+const Password = env.MONGODB_PASSWORD;
+// Initailizing MongoDb Driver Here.
 const client = new MongoClient();
 
-// Connecting 
+// Connecting With Database Here.
 client.connectWithUri(
-  "Place Your MongoDb URI Here",
+  `mongodb+srv://${Username}:${Password}@cluster0-xuuie.mongodb.net`,
 );
 
 // Database
-const db = client.database("deno");
+const db= client.database("deno");
 
-// Exporting db Here.
 export default db;
