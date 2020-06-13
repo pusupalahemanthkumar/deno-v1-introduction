@@ -1,7 +1,7 @@
-/*          Speech Recognition Project          */
+/*                Speech Recognition App               */
 
 // Importing Required Files And Packages Here.
-import { Application , send } from "https://deno.land/x/oak/mod.ts";
+import { Application, send } from "https://deno.land/x/oak/mod.ts";
 import {
   viewEngine,
   engineFactory,
@@ -10,26 +10,28 @@ import {
 
 import router from "./routes/routes.ts";
 
-// Setting Up Ejs Templating Engine Here.
+// Setting Up Ejs Template Engine
 const ejsEngine = engineFactory.getEjsEngine();
 const oakAdapter = adapterFactory.getOakAdapter();
 
 // Initializing App Here.
 const app = new Application();
 
-// Serving A Static Folder Here.
-app.use(async (ctx,next)=>{
-    await send(ctx,ctx.request.url.pathname,{
-        root :`${Deno.cwd()}/public`
-    })
-    next();
-})
-
-
-// MiddleWares Here.
+// MiddleWares Here
 app.use(viewEngine(oakAdapter, ejsEngine));
+
+// Serving A Static Folder Here.
+app.use(async (ctx, next) => {
+  await send(ctx, ctx.request.url.pathname, {
+    root: `${Deno.cwd()}/public`,
+    // index: "/views/index.ejs",
+  });
+  next();
+});
+
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-console.log("Server Started On Port Number 8000.");
-await app.listen({ port: 8000 });
+console.log("Server Started At Port Number 8000");
+app.listen({ port: 8000 });

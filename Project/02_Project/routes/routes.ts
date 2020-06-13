@@ -1,19 +1,22 @@
-// Importing Required Files And Packages Here.
-import { Router } from "https://deno.land/x/oak/mod.ts";
+// Importing Required Files And Packages
+import {Router} from "https://deno.land/x/oak/mod.ts";
 
 // Initializing Router Here.
-const router = new Router();
+const router =new Router();
 
-//  This Code is Not Working 
-// router.get("/stt", (ctx: any) => {
-//   ctx.render("views/speechToText.ejs");
-// });
-// router.get("/tts", (ctx: any) => {
-//   ctx.render("views/textToSpeech.ejs");
-// });
+router.get("/stt",(ctx:any)=>{
+  // ctx.response.body="stt Route";
+  ctx.render("views/speechToText.ejs");
+})
 
-router.get("/", (ctx: any) => {
-  ctx.render("views/index.ejs");
-});
+router.get("/tts",(ctx:any)=>{
+  // ctx.response.body="tts Route";
+  ctx.render("views/textToSpeech.ejs");
+})
+router.get("/",(ctx:any)=>{
+  // ctx.response.body="home Route";
+  ctx.render("views/index.ejs")
+})
+
 
 export default router;
