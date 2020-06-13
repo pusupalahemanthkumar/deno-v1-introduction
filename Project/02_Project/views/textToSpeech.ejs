@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <title>SpeechToTextApp</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="/css/mobile.css"
+    />
+  </head>
+  <body>
+    <div class="text-center bg-primary">
+      <h1 class="logo">
+        <span class="text-primary"> <i class="fas fa-rocket"></i>Speech</span
+        >Recognition
+      </h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="/">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/stt">
+            <i class="fas fa-microphone-alt"></i>
+            <span>STT</span>
+          </a>
+        </li>
+        <li>
+          <a href="/tts">
+            <i class="fas fa-keyboard"></i>
+            <span>TTS</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <%- content %>
+   
+
+    <script src="/js/textTospeech.js"></script>
+  </body>
+</html>

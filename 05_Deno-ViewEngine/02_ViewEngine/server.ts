@@ -27,13 +27,20 @@ app.use(async (ctx,next)=>{
 const router = new Router();
 
 // Defining Routes Here.
-router.get("/", (ctx) => {
+router.get("/test", (ctx) => {
+  ctx.render("views/index.ejs", {
+    payload: {
+      text: "test",
+    },
+  });
+}).get("/", (ctx) => {
     ctx.render("views/index.ejs", {
       payload: {
-        text: "Introduction To Templating Engines In Deno.",
+        text: "<h1>Introduction To Templating Engines In Deno. </h1>",
       },
     });
   });
+
   
 
 // MiddleWares Here.

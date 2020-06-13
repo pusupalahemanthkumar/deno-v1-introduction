@@ -1,0 +1,275 @@
+/*      Importing Google Font Here.      */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+/*      Main Styling Here        */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0.75rem 0;
+}
+/*       Utility Classes Here.       */
+.container {
+  max-width: 95%;
+  margin: auto;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+}
+/* Text */
+.text-center {
+  text-align: center;
+}
+.text-primary {
+  color: rgb(127, 127, 236);
+}
+.bg-primary {
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+/* Font Size */
+.l-heading {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.m-heading {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+/* Padding  */
+.py-1 {
+  padding: 1.5rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+.p-1 {
+  padding: 1.5rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+/* Button */
+.btn {
+  display: inline-block;
+  color: #333;
+  background: #f4f4f4;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.btn:hover {
+  background: #333;
+  color: #fff;
+}
+.btn-start {
+  background: #eee;
+  color: #333;
+}
+.btn-start:hover {
+  background: #333;
+  color: #fff;
+}
+.btn-end {
+  background: #333;
+  color: #fff;
+}
+.btn-end:hover {
+  background: #eee;
+  color: #333;
+}
+.btn-play{
+  background: #f4f4f4;
+  padding: 0.5rem 1rem;
+}
+
+/*      NavBar       */
+.navbar {
+  display: flex;
+
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: #333;
+  background: #f4f4f4;
+  color: #fff;
+  color: #333;
+  justify-content: space-evenly;
+  z-index: 1;
+  padding: 1rem;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.navbar ul li a {
+  color: #333;
+  padding: 0.75rem;
+  margin: 0 0.5rem;
+}
+.navbar ul li a:hover {
+  border-bottom: 3px solid rgb(127, 127, 236);
+}
+/* Showcase */
+.showcase {
+  background: #f4f4f4 url("../images/bg.png") no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+}
+.showcase .showcase-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+  /* Overlay */
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Output -Text */
+.output {
+  max-width: 40rem;
+  min-height: 10rem;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
+/* Controls Btn  */
+.controls {
+  max-width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+.silder-controls{
+  width:90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.stt-container {
+  margin-top: 4rem;
+}
+
+/* STT Image */
+.img-container {
+  max-width: 30rem;
+  height: 10rem;
+  margin: 1rem auto;
+}
+.img-container img {
+  display: block;
+  margin: auto;
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+}
+/* Form */
+.txt,
+select,
+form > div {
+  display: block;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 5px;
+  outline: none;
+}
+
+.txt {
+  width: 80%;
+  min-height: 6rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #f4f4f4;
+
+}
+
+select {
+  width: 80%;
+}
+
+form > div {
+  width: 81%;
+}
+
+.txt,
+form > div {
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
+label {
+  float: left;
+  width: 10%;
+  line-height: 1.5;
+}
+
+.rate-value,
+.pitch-value {
+  float: right;
+  width: 5%;
+  line-height: 1.5;
+}
+
+#rate,
+#pitch {
+  float: right;
+  width: 60%;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 0.5rem 2rem;
+}
