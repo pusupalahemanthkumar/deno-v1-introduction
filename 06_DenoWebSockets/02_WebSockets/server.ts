@@ -40,8 +40,7 @@ async function handleWebSockets(ws: WebSocket) {
   console.log(Connections.length);
   for await (const event of ws) {
     if (typeof event === "string") {
-      // console.log(event);
-      // ws.send(event);
+      
       broadcastEvent(ws, event);
 
       if (isWebSocketCloseEvent(event)) {
