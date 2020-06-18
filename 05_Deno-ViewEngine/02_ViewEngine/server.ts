@@ -15,20 +15,14 @@ const app = new Application();
 const ejsEngine = engineFactory.getEjsEngine();
 const oakAdapter = adapterFactory.getOakAdapter();
 
-// Serving A Static Folder Here.
-app.use(async (ctx,next)=>{
-    await send(ctx,ctx.request.url.pathname,{
-        root :`${Deno.cwd()}/public`
-    })
-    next();
-})
+
 
 // Initializing Router Here.
 const router = new Router();
 
 // Defining Routes Here.
 router.get("/test", (ctx) => {
-  ctx.render("views/index.ejs", {
+  ctx.render("views/test.ejs", {
     payload: {
       text: "test",
     },
@@ -47,6 +41,20 @@ router.get("/test", (ctx) => {
 app.use(viewEngine(oakAdapter, ejsEngine));
 app.use(router.routes());
 app.use(router.allowedMethods());
+/*  
+Note: 
+All get request to /test path are intercepted by static content middleware, 
+move that middleware function after to common middleware setup
+
+*/
+
+// Serving A Static Folder Here.
+app.use(async (ctx,next)=>{
+  await send(ctx,ctx.request.url.pathname,{
+      root :`${Deno.cwd()}/public`
+  })
+  next();
+})
 
 console.log("Server Started On Port Number 8000.");
 await app.listen({ port: 8000 });
