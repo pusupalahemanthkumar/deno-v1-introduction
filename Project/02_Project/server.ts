@@ -19,19 +19,16 @@ const app = new Application();
 
 // MiddleWares Here
 app.use(viewEngine(oakAdapter, ejsEngine));
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 // Serving A Static Folder Here.
 app.use(async (ctx, next) => {
   await send(ctx, ctx.request.url.pathname, {
     root: `${Deno.cwd()}/public`,
-    // index: "/views/index.ejs",
   });
   next();
 });
-
-
-app.use(router.routes());
-app.use(router.allowedMethods());
 
 console.log("Server Started At Port Number 8000");
 app.listen({ port: 8000 });
